@@ -73,24 +73,45 @@ terraform apply -auto-approve
 ```
 
 ## Verification
+
+After successful deployment, verify the infrastructure:
+
+### Option 1: View Outputs
 ```bash
-# View outputs
 terraform output
+```
 
-# Run tests
-terraform test
+### Option 2: Run Validation Test (Recommended)
+```bash
+# Run simple validation test (does not create new resources)
+terraform test simple-validation.tftest.hcl
+```
+This test validates existing infrastructure without creating duplicates.
 
-# SSH into Public instance
-ssh -i my_key.pem ubuntu@<public_ip>
+### Option 3: Run Verification Script
+```bash
+chmod +x verify-infrastructure.sh
+./verify-infrastructure.sh
+```
+
+### Option 4: SSH Connection Test
+```bash
+# Get public IP from outputs
+PUBLIC_IP=$(terraform output -json | jq -r '.EC2.value.public_instance_public_ip')
+
+# Connect to public instance
+ssh -i my_key.pem ubuntu@$PUBLIC_IP
 ```
 
 ## Test Cases
-Test cases are defined in the `tests/` directory:
-- VPC Test
-- NAT Gateway Test
-- Route Tables Test
-- Security Groups Test
-- EC2 Test
+
+**Important:** The test files in `tests/` directory are for clean-room testing (deploying from scratch). Do NOT run them after infrastructure is already deployed as they will try to create duplicate resources.
+
+For deployed infrastructure, use:
+- `simple-validation.tftest.hcl` - Validates existing resources
+- `verify-infrastructure.sh` - Manual verification script
+
+See [TESTING.md](TESTING.md) for detailed testing guide.
 
 ## Cleanup
 ```bash
