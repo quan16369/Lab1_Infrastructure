@@ -1,5 +1,5 @@
 # Create S3 bucket for state
-aws s3 mb s3://nt548-terraform-state-$(date +%s) --region ap-southeast-1
+aws s3 mb s3://nt548-terraform-state-$(date +%s) --region ap-southeast-1a
 aws s3api put-bucket-versioning \
   --bucket nt548-terraform-state \
   --versioning-configuration Status=Enabled
@@ -10,4 +10,4 @@ aws dynamodb create-table \
   --attribute-definitions AttributeName=LockID,AttributeType=S \
   --key-schema AttributeName=LockID,KeyType=HASH \
   --billing-mode PAY_PER_REQUEST \
-  --region ap-southeast-1
+  --region ap-southeast-1a
