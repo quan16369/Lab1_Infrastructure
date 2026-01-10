@@ -11,7 +11,7 @@ public_subnet_cidr = "10.0.1.0/24"
 private_subnet_cidr = "10.0.2.0/24"
 
 # Availability zone for the resources
-availability_zone = "ap-southeast-1a"
+availability_zone = "ap-southeast-1"
 
 # Instance type for the EC2 instance
 instance_type = "t2.micro"
