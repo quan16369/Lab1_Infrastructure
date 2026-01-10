@@ -88,13 +88,7 @@ terraform test simple-validation.tftest.hcl
 ```
 This test validates existing infrastructure without creating duplicates.
 
-### Option 3: Run Verification Script
-```bash
-chmod +x verify-infrastructure.sh
-./verify-infrastructure.sh
-```
-
-### Option 4: SSH Connection Test
+### Option 3: SSH Connection Test
 ```bash
 # Get public IP from outputs
 PUBLIC_IP=$(terraform output -json | jq -r '.EC2.value.public_instance_public_ip')
@@ -109,7 +103,6 @@ ssh -i my_key.pem ubuntu@$PUBLIC_IP
 
 For deployed infrastructure, use:
 - `simple-validation.tftest.hcl` - Validates existing resources
-- `verify-infrastructure.sh` - Manual verification script
 
 See [TESTING.md](TESTING.md) for detailed testing guide.
 
