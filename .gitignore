@@ -15,6 +15,10 @@ override.tf.json
 # Local credentials
 local.tf
 
+# SSH Keys
+*.pem
+my_key.pem
+
 # OS files
 .DS_Store
 Thumbs.db
