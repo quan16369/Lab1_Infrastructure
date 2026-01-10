@@ -14,7 +14,7 @@ provider "aws" {
 }
 
 module "VPC" {
-  source                  = "./modules/VPC"
+  source                  = "./modules/Vpc"
   vpc_cidr                = var.vpc_cidr 
   public_subnet_cidr      = var.public_subnet_cidr 
   private_subnet_cidr     = var.private_subnet_cidr 
@@ -22,12 +22,12 @@ module "VPC" {
 }
 
 module "NAT" {
-  source                  = "./modules/NAT"
+  source                  = "./modules/NAT-Gateway"
   public_subnet_id        = module.VPC.public_subnet_id
 }
 
 module "Route_Table" {
-  source                  = "./modules/Route_Table"
+  source                  = "./modules/Route-Tables"
   vpc_id                  = module.VPC.vpc_id
   gateway_id              = module.VPC.internet_gateway_id
   public_subnet_id        = module.VPC.public_subnet_id
@@ -47,7 +47,7 @@ module "ec2" {
 }
 
 module "security_group" {
-  source                  = "./modules/Security_Group"
+  source                  = "./modules/Security-Groups"
   vpc_id                  = module.VPC.vpc_id
   allowed_ip              = var.allowed_ip 
   public_subnet_id        = module.VPC.public_subnet_id
