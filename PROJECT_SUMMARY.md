@@ -1,29 +1,29 @@
 # Lab 1 Infrastructure - Project Summary
 
-## ✅ Hoàn thành
+##  Hoàn thành
 
 ### 1. Terraform Implementation (100%)
-- ✅ VPC với Public/Private Subnets
-- ✅ Internet Gateway và NAT Gateway
-- ✅ Route Tables (Public & Private)
-- ✅ Security Groups (với rules tách riêng - fix circular dependency)
-- ✅ EC2 Instances (Public & Private)
-- ✅ Module structure hoàn chỉnh
-- ✅ S3 Backend với DynamoDB locking
-- ✅ Terraform native tests
-- ✅ Documentation (README.md, TESTING.md)
-- ✅ Safe destroy script
+-  VPC với Public/Private Subnets
+-  Internet Gateway và NAT Gateway
+-  Route Tables (Public & Private)
+-  Security Groups (với rules tách riêng - fix circular dependency)
+-  EC2 Instances (Public & Private)
+-  Module structure hoàn chỉnh
+-  S3 Backend với DynamoDB locking
+-  Terraform native tests
+-  Documentation (README.md, TESTING.md)
+-  Safe destroy script
 
 ### 2. CloudFormation Implementation (100%)
-- ✅ VPC Stack (nested stack)
-- ✅ NAT Gateway Stack
-- ✅ Route Tables Stack
-- ✅ Security Groups Stack (với rules tách riêng)
-- ✅ EC2 Stack
-- ✅ Main orchestrator stack
-- ✅ Deployment scripts (deploy.sh, destroy.sh, validate.sh)
-- ✅ Parameters file
-- ✅ Documentation (cloudformation/README.md)
+-  VPC Stack (nested stack)
+-  NAT Gateway Stack
+-  Route Tables Stack
+-  Security Groups Stack (với rules tách riêng)
+-  EC2 Stack
+-  Main orchestrator stack
+-  Deployment scripts (deploy.sh, destroy.sh, validate.sh)
+-  Parameters file
+-  Documentation (cloudformation/README.md)
 
 ## Cấu trúc Project
 
@@ -35,12 +35,12 @@ Lab1_Infrastructure/
 │   │   ├── Vpc/
 │   │   ├── NAT-Gateway/
 │   │   ├── Route-Tables/
-│   │   ├── Security-Groups/     # ✅ Rules tách riêng
+│   │   ├── Security-Groups/     #  Rules tách riêng
 │   │   └── EC2/
 │   ├── tests/
 │   │   └── *.tftest.hcl
 │   ├── simple-validation.tftest.hcl
-│   ├── safe-destroy.sh          # ✅ Script xóa an toàn
+│   ├── safe-destroy.sh          #  Script xóa an toàn
 │   ├── TESTING.md
 │   └── README.md
 │
@@ -51,7 +51,7 @@ Lab1_Infrastructure/
         │   ├── vpc-stack.yaml
         │   ├── nat-stack.yaml
         │   ├── route-tables-stack.yaml
-        │   ├── security-groups-stack.yaml   # ✅ Rules tách riêng
+        │   ├── security-groups-stack.yaml   #  Rules tách riêng
         │   └── ec2-stack.yaml
         ├── parameters.json
         ├── deploy.sh
@@ -70,9 +70,9 @@ Lab1_Infrastructure/
 - **CloudFormation**: Dùng `AWS::EC2::SecurityGroupIngress/Egress` resources riêng biệt
 
 **Kết quả**: 
-- ✅ Destroy không còn bị "Still destroying..."
-- ✅ AWS có thể xóa rules trước, sau đó xóa security groups
-- ✅ Không còn deadlock
+-  Destroy không còn bị "Still destroying..."
+-  AWS có thể xóa rules trước, sau đó xóa security groups
+-  Không còn deadlock
 
 ### 2. Safe Destroy Script (Terraform)
 Script xóa resources theo thứ tự đúng:
@@ -139,7 +139,7 @@ cfn-lint nested-stacks/*.yaml
 
 ### NT548-BaiTapThucHanh-01 Requirements:
 
-#### ✅ Các dịch vụ cần triển khai (10 điểm):
+####  Các dịch vụ cần triển khai (10 điểm):
 - [x] VPC với Subnets (Public + Private) - 3 điểm
 - [x] Internet Gateway - 3 điểm
 - [x] Default Security Group - 3 điểm
@@ -148,14 +148,14 @@ cfn-lint nested-stacks/*.yaml
 - [x] EC2 Instances (Public + Private) - 2 điểm
 - [x] Security Groups (Public + Private) - 2 điểm
 
-#### ✅ Yêu cầu kỹ thuật:
+####  Yêu cầu kỹ thuật:
 - [x] Viết dưới dạng **module** (Terraform) / **nested stacks** (CloudFormation)
 - [x] Đảm bảo **an toàn bảo mật** cho EC2 (Security Groups rules)
 - [x] **Test cases** để kiểm tra từng dịch vụ
 - [x] **README** hướng dẫn cách chạy
 - [x] **Cả Terraform VÀ CloudFormation**
 
-#### ✅ Kết quả nộp bài:
+####  Kết quả nộp bài:
 - [x] Link GitHub với source code
 - [x] README.md đầy đủ
 - [ ] Báo cáo Word (cần làm tiếp)
@@ -192,8 +192,8 @@ Cả hai phương pháp đều tạo:
 **Total: ~23 resources**
 
 ## Git Repository Status
-- ✅ `.gitignore` configured
-- ✅ `.pem` files excluded
-- ✅ `terraform.tfvars` excluded
-- ✅ `local.tf` excluded
-- ✅ Git history clean (no leaked credentials)
+-  `.gitignore` configured
+-  `.pem` files excluded
+-  `terraform.tfvars` excluded
+-  `local.tf` excluded
+-  Git history clean (no leaked credentials)

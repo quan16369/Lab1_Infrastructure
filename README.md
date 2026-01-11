@@ -174,11 +174,11 @@ See [cloudformation/README.md](cloudformation/README.md) for detailed CloudForma
 | **Validation** | `terraform validate` | `cfn-lint`, `aws cloudformation validate-template` |
 
 Both implementations follow **best practices**:
-- ✅ Security Group rules are separate resources (prevents circular dependencies)
-- ✅ Modular/Nested structure for maintainability
-- ✅ Proper tagging for all resources
-- ✅ Encrypted EBS volumes
-- ✅ IMDSv2 required for EC2 metadata
+-  Security Group rules are separate resources (prevents circular dependencies)
+-  Modular/Nested structure for maintainability
+-  Proper tagging for all resources
+-  Encrypted EBS volumes
+-  IMDSv2 required for EC2 metadata
 
 ---
 
