@@ -31,7 +31,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
-          terraform_version: '1.5.0' # Hoặc version bạn đang dùng ở Lab 1
+          terraform_version: 'latest'
 
       # Khởi tạo Terraform (Init)
       - name: Terraform Init
