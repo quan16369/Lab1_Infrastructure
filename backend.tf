@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket =  "nt548-terraform-state-1768057314"       # name of the S3 bucket
+    bucket =  "nt548-terraform-state-1768646704"       # name of the S3 bucket
     key    =  "dev/terraform.tfstate"         # path to the state file inside the bucket
     region =  "us-east-1"                     # region of the S3 bucket
     encrypt = true                           # enable server-side encryption

@@ -33,7 +33,7 @@
   },
   {
     "ParameterKey": "NestedStacksS3Bucket",
-    "ParameterValue": "YOUR-S3-BUCKET-NAME-HERE"
+    "ParameterValue": "nt548-terraform-state-1768646704"
   },
   {
     "ParameterKey": "NestedStacksS3KeyPrefix",
