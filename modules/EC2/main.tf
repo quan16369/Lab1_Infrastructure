@@ -10,10 +10,11 @@ resource "aws_key_pair" "generated_key" {
 
 # checkov:skip=CKV2_AWS_41:IAM Role skipped for Lab simplicity
 resource "aws_instance" "public" {
-  ami             = var.ami
-  instance_type   = var.instance_type
-  subnet_id       = var.public_subnet_id
-  security_groups = [var.public_security_group]
+  ami                    = var.ami
+  instance_type          = var.instance_type
+  subnet_id              = var.public_subnet_id
+  vpc_security_group_ids = [var.public_security_group]
+  key_name               = aws_key_pair.generated_key.key_name
 
   # optimize Elastic Block Store (EBS) performance
   ebs_optimized = true
@@ -47,10 +48,10 @@ resource "aws_instance" "public" {
 
 # checkov:skip=CKV2_AWS_41:IAM Role skipped for Lab simplicity
 resource "aws_instance" "private" {
-  ami             = var.ami
-  instance_type   = var.instance_type
-  subnet_id       = var.private_subnet_id
-  security_groups = [var.private_security_group]
+  ami                    = var.ami
+  instance_type          = var.instance_type
+  subnet_id              = var.private_subnet_id
+  vpc_security_group_ids = [var.private_security_group]
 
   # ssh key pair
   key_name = aws_key_pair.generated_key.key_name
