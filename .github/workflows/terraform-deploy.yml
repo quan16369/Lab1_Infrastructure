@@ -26,7 +26,7 @@ jobs:
       TF_VAR_public_subnet_cidr: "10.0.1.0/24"
       TF_VAR_private_subnet_cidr: "10.0.2.0/24"
       TF_VAR_availability_zone: "us-east-1a"
-      TF_VAR_ami_id: "ami-0c55b159cbfafe1f0" 
+      TF_VAR_ami_id: "ami-0866a3c8686eaeeba" 
       TF_VAR_instance_type: "t2.micro"
       TF_VAR_key_name: "devops-key"
       TF_VAR_allowed_ip: "14.184.93.206/32"
